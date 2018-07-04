@@ -1,0 +1,17 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "build",
+        "declaration": true,
+        "strict": true,
+        "strictNullChecks": false,
+        "sourceMap": true,
+        "baseUrl": "source"
+    },
+    "include": [
+        "source/**/*.ts"
+    ]
+}

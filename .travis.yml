@@ -1,0 +1,11 @@
+language:
+  node_js
+node_js:
+  "7.10.1"
+install:
+  - npm install
+  - npm install -g codecov
+script:
+  - bash scripts/ci.sh
+notifications:
+  email: false
