@@ -1,6 +1,6 @@
 {
   "name": "libsemver",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple semantic versioning library written in Typescript",
   "main": "build/semver.js",
   "types": "build/semver.d.ts",
@@ -12,8 +12,8 @@
     "build": "tsc",
     "build-watch": "tsc --watch",
     "lint": "eslint ./source/**/*.ts",
-    "test": "cross-env SEMVER_REGEX_PATH=regex.txt NODE_ENV=development mocha -r ts-node/register ./test/**/*",
-    "test-cover": "cross-env SEMVER_REGEX_PATH=regex.txt NODE_ENV=development nyc mocha --bail --recursive -r ts-node/register ./test/**/*"
+    "test": "cross-env NODE_ENV=development mocha -r ts-node/register ./test/**/*",
+    "test-cover": "cross-env NODE_ENV=development nyc mocha --bail --recursive -r ts-node/register ./test/**/*"
   },
   "repository": {
     "type": "git",

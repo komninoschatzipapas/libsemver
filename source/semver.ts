@@ -1,10 +1,9 @@
 /**
  * A light library to parse, compare and mess around with SemVer.
  */
-import {readFileSync} from 'fs';
 
 /*
- * A custom RegEx can be passed via the SEMVER_REGEX_PATH env variable.
+ * A custom RegEx can be passed via the SEMVER_REGEX env variable.
  * For it to be valid, it needs to have 5 groups:
  * 1: Major version
  * 2: Minor version
@@ -23,9 +22,9 @@ import {readFileSync} from 'fs';
  * Group 4: -rc1.5
  * Group 5: +somemetadata
  */
-const regexString: string = readFileSync(process.env.SEMVER_REGEX_PATH ||
-    '../regex.txt', 'utf8');
-const REGEX: RegExp = new RegExp(regexString);
+const MY_REGEX: string = '^(\\d+)\\.(\\d+)\.(\\d+)(-[a-zA-Z0-9.]*[^.+-])?'
+    + '(\\+[a-zA-z0-9]+)?$';
+const REGEX: RegExp = new RegExp(process.env.SEMVER_REGEX || MY_REGEX);
 
 type SemVer = {
     major: number;
