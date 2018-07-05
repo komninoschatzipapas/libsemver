@@ -1,9 +1,13 @@
 {
   "name": "libsemver",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple semantic versioning library written in Typescript",
   "main": "build/semver.js",
   "types": "build/semver.d.ts",
+  "keywords": [
+    "typescript",
+    "semver"
+  ],
   "scripts": {
     "build": "tsc",
     "build-watch": "tsc --watch",
