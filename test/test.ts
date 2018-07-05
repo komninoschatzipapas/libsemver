@@ -25,6 +25,7 @@ describe('SemVer', () => {
             '2.1.6-alpha.beta.1',
             '6.2.3-rc1.5+somemetadata',
             '3.5.1+another_one',
+            '1.1.1-1',
         ];
 
         invalid = [
