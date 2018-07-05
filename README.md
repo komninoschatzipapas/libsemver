@@ -1,8 +1,8 @@
-# semver [![Build Status](https://travis-ci.com/openswap/semver.svg?token=77tGVGQm8MEqHiybdQbG&branch=master)](https://travis-ci.com/openswap/semver) [![codecov](https://codecov.io/gh/openswap/semver/branch/master/graph/badge.svg?token=v03B5DDbqX)](https://codecov.io/gh/openswap/semver)
+# libsemver [![Build Status](https://travis-ci.com/openswap/libsemver.svg?token=77tGVGQm8MEqHiybdQbG&branch=master)](https://travis-ci.com/openswap/libsemver) [![codecov](https://codecov.io/gh/openswap/libsemver/branch/master/graph/badge.svg?token=v03B5DDbqX)](https://codecov.io/gh/openswap/libsemver)
 
 A simple SemVer library written in Typescript.
 ```js
-const SemVer = require('js-semver');
+const SemVer = require('libsemver');
 SemVer.verify('1.3.5'); // true
 SemVer.verify('not a valid semver'); // false
 Semver.parse('1.2.1-alpha+githash');

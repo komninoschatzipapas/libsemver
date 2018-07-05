@@ -1,6 +1,6 @@
 {
   "name": "libsemver",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Simple semantic versioning library written in Typescript",
   "main": "build/semver.js",
   "types": "build/semver.d.ts",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/openswap/semver"
+    "url": "https://github.com/openswap/libsemver"
   },
   "author": "komninoschat",
   "license": "MIT",
