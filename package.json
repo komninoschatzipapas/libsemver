@@ -1,7 +1,7 @@
 {
-  "name": "semver",
-  "version": "0.0.0",
-  "description": "Simple Typescript semantic versioning library",
+  "name": "libsemver",
+  "version": "1.0.0",
+  "description": "Simple semantic versioning library written in Typescript",
   "main": "build/semver.js",
   "types": "build/semver.d.ts",
   "scripts": {
