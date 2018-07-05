@@ -6,6 +6,8 @@ describe('SemVer', () => {
     let valid: Array<string>;
     let invalid: Array<string>;
     let parsedSemvers: Array<Object>;
+    let compatible: Array<Array<string>>;
+    let incompatible: Array<Array<string>>;
 
     before(() => {
         valid = [
@@ -90,6 +92,20 @@ describe('SemVer', () => {
                 'identifiers': ['rc'],
             },
         ];
+
+        compatible = [
+            ['1.1.1', '1.1.2'],
+            ['2.0.1', '2.0.2'],
+            ['1.2.1', '1.5.6+hash'],
+            ['1.7.3', '1.8.5'],
+        ]
+
+        incompatible = [
+            ['1.0.1', '2.1.2'], // Different major version
+            ['1.5.2', '4.1.0-alpha'], // One is stable, other one is alpha
+            ['1.1.7', '1.0.0-beta'], // One is stable, other one is beta
+            ['2.0.0', '1.0.0-rc'], // One is stable, other one is rc
+        ]
     });
 
     it('Should validate valid SemVers', () => {
@@ -116,5 +132,20 @@ describe('SemVer', () => {
         invalid.forEach((semver) => {
             expect(SemVer.parse(semver)).to.deep.equal(null);
         });
+    });
+
+    it('Should deem compatible SemVers as compatible', () => {
+        compatible.forEach((pair) => {
+            expect(SemVer.compatible(pair[0], pair[1])).to.be.deep.equal(true);
+        });
+    });
+
+    it('Should deem incompatible SemVers as incompatible', () => {
+        incompatible.forEach((pair) => {
+            expect(SemVer.compatible(pair[0], pair[1])).to.be.deep.equal(false);
+        });
+
+        expect(SemVer.compatible('', '1.0.0')).to.be.deep.equal(null);
+        expect(SemVer.compatible('1.0.0', '')).to.be.deep.equal(null);
     });
 });

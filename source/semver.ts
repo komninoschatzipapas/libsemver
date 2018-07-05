@@ -85,8 +85,27 @@ function parse(str: string): SemVer|null {
     return r;
 }
 
+function compatible(str1: string, str2: string): boolean|null {
+    let semver1: SemVer = parse(str1);
+    let semver2: SemVer = parse(str2);
+
+    if (semver1 == null || semver2 == null) {
+        return null;
+    }
+
+    if (semver1.major != semver2.major ||
+      semver1.alpha != semver2.alpha ||
+      semver1.beta != semver2.beta ||
+      semver1.rc != semver2.rc) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 export default {
     'REGEX': REGEX,
     'valid': valid,
     'parse': parse,
+    'compatible': compatible,
 };
